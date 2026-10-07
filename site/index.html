@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bubble Harness</title>
+  <meta name="description" content="Every coding agent in one fast desktop app. Bring your own Claude Code, Codex, Cursor, OpenCode, Grok or Antigravity plan." />
+  <meta name="theme-color" content="#0a0c0b" />
+  <link rel="icon" href="icons/bubble.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="fizz" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="icons/bubble.svg" alt="" width="26" height="26" />
+      <span>Bubble Harness</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#subs">Providers</a>
+      <a href="#fast">Why it's fast</a>
+      <a class="nav-star" href="https://github.com/huslayer826/bubble-harness" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>
+        Star <span class="star-count" data-stars></span>
+      </a>
+      <a class="nav-cta" href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="orbit" aria-label="Supported agents">
+        <button class="orb" style="--x:9%;--y:22%;--s:96px;--d:0s"   title="Claude Code"><img src="icons/claude.svg" alt="Claude Code" /></button>
+        <button class="orb" style="--x:31%;--y:6%; --s:70px;--d:-2s"  title="OpenCode"><img src="icons/opencode.svg" alt="OpenCode" /></button>
+        <button class="orb" style="--x:72%;--y:5%; --s:78px;--d:-4s"  title="Antigravity"><img src="icons/antigravity.svg" alt="Antigravity" /></button>
+        <button class="orb" style="--x:91%;--y:26%;--s:104px;--d:-1s" title="Codex"><img src="icons/openai.svg" alt="Codex" /></button>
+        <button class="orb" style="--x:20%;--y:72%;--s:84px;--d:-3s"  title="Grok"><img src="icons/grok.svg" alt="Grok" /></button>
+        <button class="orb" style="--x:82%;--y:74%;--s:90px;--d:-5s"  title="Cursor"><img src="icons/cursor.svg" alt="Cursor" /></button>
+      </div>
+
+      <div class="hero-copy">
+        <p class="pill"><span class="dot"></span>Early preview · macOS</p>
+        <h1>Every coding agent.<br /><span class="soft">One fast bubble.</span></h1>
+        <p class="lede">
+          Run Claude Code, Codex, Cursor, OpenCode, Grok and Antigravity from one window.
+          Built in Rust, so it stays snappy with five agents going at once.
+        </p>
+        <div class="cta-row" id="download">
+          <a class="btn-primary" href="https://github.com/huslayer826/bubble-harness/releases/latest">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.37 12.7c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.08 5.94c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.02.08 2.07-.52 2.71-1.28z"/></svg>
+            Download for macOS
+          </a>
+          <a class="btn-ghost" href="#subs">See what it runs <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product peek -->
+    <section class="peek" aria-label="App preview">
+      <div class="window">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <p>bubble-harness — landing-page</p>
+        </div>
+        <div class="window-body">
+          <aside class="side">
+            <p class="side-label">Threads</p>
+            <div class="thread active"><img src="icons/claude.svg" alt="" />Hero copy pass<em>now</em></div>
+            <div class="thread"><img src="icons/openai.svg" alt="" />Fix nav on mobile<em>2m</em></div>
+            <div class="thread"><img src="icons/cursor.svg" alt="" />Bubble animation<em>9m</em></div>
+            <div class="thread"><img src="icons/grok.svg" alt="" />Write tests<em>1h</em></div>
+          </aside>
+          <div class="chat">
+            <div class="msg you">Make the hero feel lighter. Less copy, more air.</div>
+            <div class="msg agent">
+              <p>Trimmed the subheading to two lines and bumped the spacing. Here's the diff:</p>
+              <div class="diff">
+                <span class="file">index.html</span>
+                <code class="del">- The open, flexible, all-in-one platform for…</code>
+                <code class="add">+ Every coding agent. One fast bubble.</code>
+              </div>
+            </div>
+            <div class="composer">
+              <span>Ask anything…</span>
+              <span class="chip"><img src="icons/claude.svg" alt="" />Claude Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bring your own sub -->
+    <section class="subs" id="subs">
+      <div class="section-head">
+        <h2>Bring your own sub.</h2>
+        <p>We don't sell tokens. Sign in with the plans you already pay for and we'll handle the rest.</p>
+      </div>
+
+      <div class="sub-grid">
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/claude.svg" alt="" /></span>
+          <div><h3>Claude Code</h3><code>claude auth login</code></div>
+          <button class="copy" data-copy="claude auth login" aria-label="Copy command">Copy</button>
+        </article>
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/openai.svg" alt="" /></span>
+          <div><h3>Codex</h3><code>codex login</code></div>
+          <button class="copy" data-copy="codex login" aria-label="Copy command">Copy</button>
+        </article>
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/cursor.svg" alt="" /></span>
+          <div><h3>Cursor</h3><code>cursor-agent login</code></div>
+          <button class="copy" data-copy="cursor-agent login" aria-label="Copy command">Copy</button>
+        </article>
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/opencode.svg" alt="" /></span>
+          <div><h3>OpenCode</h3><code>opencode auth login</code></div>
+          <button class="copy" data-copy="opencode auth login" aria-label="Copy command">Copy</button>
+        </article>
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/grok.svg" alt="" /></span>
+          <div><h3>Grok</h3><code>xAI account</code></div>
+        </article>
+        <article class="sub">
+          <span class="sub-icon"><img src="icons/antigravity.svg" alt="" /></span>
+          <div><h3>Antigravity</h3><code>Google sign-in</code></div>
+        </article>
+      </div>
+
+      <ul class="notes">
+        <li>Your logins stay on your Mac.</li>
+        <li>No markup, no extra caps.</li>
+        <li>More agents on the way.</li>
+      </ul>
+    </section>
+
+    <!-- Fast -->
+    <section class="fast" id="fast">
+      <div class="section-head">
+        <h2>Fast where it counts.</h2>
+        <p>The next harness shouldn't feel like a browser tab. This one doesn't.</p>
+      </div>
+
+      <div class="tiles">
+        <article class="tile">
+          <span class="tile-bubble"></span>
+          <h3>Rust under the hood</h3>
+          <p>Storage, processes and the terminal run native. The UI never waits on them.</p>
+        </article>
+        <article class="tile">
+          <span class="tile-bubble"></span>
+          <h3>Close it. It keeps going.</h3>
+          <p>Turns, approvals and queued prompts survive the window closing. Reopen and you're caught up.</p>
+        </article>
+        <article class="tile">
+          <span class="tile-bubble"></span>
+          <h3>Race your models</h3>
+          <p>Send one prompt to a few agents. Each gets its own worktree, so nothing collides.</p>
+        </article>
+        <article class="tile">
+          <span class="tile-bubble"></span>
+          <h3>Diffs and terminal built in</h3>
+          <p>Review changes, rewind a turn, run a command. No tab-hopping.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Closer -->
+    <section class="closer">
+      <h2>Blow a bubble.<br /><span class="soft">Ship something.</span></h2>
+      <a class="btn-primary" href="https://github.com/huslayer826/bubble-harness/releases/latest">Get Bubble Harness</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="brand" href="#top"><img src="icons/bubble.svg" alt="" width="20" height="20" /><span>Bubble Harness</span></a>
+    <p>© 2026 Bubble Harness. Logos belong to their owners.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

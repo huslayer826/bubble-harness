@@ -1,0 +1,25 @@
+name: Bug report
+description: Something isn't working
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you got instead.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Bubble version
+      placeholder: e.g. 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Agent
+      multiple: true
+      options: [Claude Code, Codex, Cursor, OpenCode, Grok, Antigravity, Not agent-specific]
+  - type: input
+    attributes:
+      label: macOS version
+      placeholder: e.g. macOS 26.3
