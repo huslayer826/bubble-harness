@@ -21,7 +21,15 @@
 
 ## Download
 
-Grab the latest `.dmg` from **[Releases](https://github.com/huslayer826/bubble-harness/releases/latest)**. macOS only for now, and it's an early preview.
+**Homebrew** (recommended)
+
+```sh
+brew install --cask huslayer826/tap/bubble-harness
+```
+
+**Or download the [.dmg](https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg)** and drag Bubble Harness to Applications. The app isn't signed by Apple yet, so the first time you open it macOS will block it. Go to **System Settings → Privacy & Security** and click **Open Anyway**.
+
+Requires an Apple Silicon Mac and [Node.js](https://nodejs.org) (Homebrew installs Node for you). It's free and an early preview.
 
 ## Bring your own sub
 
