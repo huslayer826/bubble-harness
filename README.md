@@ -31,6 +31,8 @@ brew install --cask huslayer826/tap/bubble-harness
 
 Requires an Apple Silicon Mac and [Node.js](https://nodejs.org) (Homebrew installs Node for you). It's free and an early preview.
 
+**Update** with `brew upgrade --cask bubble-harness`, or download the latest .dmg again. **Uninstall** with `brew uninstall --cask --zap bubble-harness` (the `--zap` also removes chats and settings).
+
 ## Bring your own sub
 
 Bubble doesn't sell tokens. Sign in to the agents you already pay for and Bubble runs them for you.
