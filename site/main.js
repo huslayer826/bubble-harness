@@ -53,15 +53,16 @@ document.querySelectorAll(".copy").forEach((btn) => {
 });
 
 // Live GitHub star count. Fails quietly if the API is unreachable or rate-limited.
-const starEl = document.querySelector("[data-stars]");
-if (starEl) {
+const starEls = document.querySelectorAll("[data-stars]");
+if (starEls.length) {
   fetch("https://api.github.com/repos/huslayer826/bubble-harness")
     .then((r) => (r.ok ? r.json() : null))
     .then((repo) => {
       const n = repo?.stargazers_count;
-      if (typeof n === "number" && n > 0) {
-        starEl.textContent = n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : String(n);
-      }
+      if (typeof n !== "number" || n <= 0) return;
+      const label = n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : String(n);
+      starEls.forEach((el) => (el.textContent = label));
+      document.querySelectorAll("[data-stars-wrap]").forEach((el) => (el.hidden = false));
     })
     .catch(() => {});
 }

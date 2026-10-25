@@ -83,9 +83,21 @@ Not yet. macOS first.
   </tr>
 </table>
 
-## Feedback
+## Give it a try 🫧
 
-Found a bug or want a feature? [Open an issue](https://github.com/huslayer826/bubble-harness/issues/new/choose). If you like where this is going, a ⭐ helps a lot.
+Bubble is an early preview, and we're building it in the open. If you try it, please tell us how it went. Even a couple of sentences helps us decide what to build next.
+
+- **[Share feedback](https://github.com/huslayer826/bubble-harness/issues/new?template=1-feedback.yml)**: what worked, what got in the way
+- **[Report a bug](https://github.com/huslayer826/bubble-harness/issues/new?template=2-bug.yml)**: something broke
+- **[Request a feature](https://github.com/huslayer826/bubble-harness/issues/new?template=3-feature.yml)**: something's missing
+
+We read every one and reply on the issue.
+
+<p align="center">
+  <a href="https://github.com/huslayer826/bubble-harness"><img alt="Star us on GitHub" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=for-the-badge&logo=github&label=Star%20us%20on%20GitHub&color=1e6755" /></a>
+</p>
+
+If Bubble saves you some time, a ⭐ helps other people find it.
 
 ---
 

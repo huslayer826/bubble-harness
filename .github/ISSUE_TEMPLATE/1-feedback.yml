@@ -1,0 +1,25 @@
+name: Share feedback
+description: Tried Bubble? Tell us how it went
+labels: [feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for giving Bubble a try! A few honest sentences help more than you'd think.
+  - type: textarea
+    attributes:
+      label: What did you try?
+      description: The agents you used and what you were working on.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What worked well?
+  - type: textarea
+    attributes:
+      label: What got in the way?
+      description: Anything slow, confusing or missing.
+  - type: dropdown
+    attributes:
+      label: Would you keep using it?
+      options: [Yes, Maybe, Not yet]

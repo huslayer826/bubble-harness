@@ -255,7 +255,31 @@ h2 { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.04
 .tile:hover .tile-bubble { transform: translate(-14px, 14px) scale(1.1); }
 
 .closer { text-align: center; padding: 60px 24px 160px; }
-.closer h2 { margin-bottom: 40px; }
+.closer h2 { margin-bottom: 20px; }
+.closer-lede { max-width: 520px; margin: 0 auto; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.star-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 20px; border-radius: 999px;
+  border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03);
+  color: var(--text); font-size: 15px; font-weight: 500;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.star-btn:hover { border-color: rgba(169, 228, 198, 0.4); background: rgba(169, 228, 198, 0.06); transform: translateY(-2px); }
+.star-btn-count { display: inline-flex; align-items: center; gap: 5px; padding-left: 10px; border-left: 1px solid var(--line); color: var(--mint); font-variant-numeric: tabular-nums; }
+.star-btn-count[hidden] { display: none; }
+.star-btn-count b { font-weight: 500; color: var(--text); }
+.star-btn:hover .star-btn-count svg { animation: twinkle 0.6s ease; }
+@keyframes twinkle { 50% { transform: scale(1.3) rotate(15deg); } }
+.feedback-links { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+.feedback-links a {
+  display: flex; flex-direction: column; gap: 3px; text-align: left;
+  min-width: 200px; padding: 14px 18px; border-radius: 16px;
+  border: 1px solid var(--line); background: var(--card);
+  transition: border-color 0.2s, background 0.2s;
+}
+.feedback-links a:hover { border-color: rgba(169, 228, 198, 0.3); background: rgba(169, 228, 198, 0.04); }
+.feedback-links strong { font-size: 14.5px; font-weight: 500; }
+.feedback-links span { font-size: 13px; color: var(--dim); }
 
 .foot {
   max-width: var(--max); margin: 0 auto; padding: 28px 24px 40px;
