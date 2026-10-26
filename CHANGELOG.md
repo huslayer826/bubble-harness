@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 — 2026-10-26
+
+**Fixes**
+- **Edit from here works.** Rewinding a conversation no longer fails with "Provider runtime configuration changed", and "Undo file changes from here on" restores your files in a normal project, saving your current files first. The dialog is in plain language.
+- **OpenCode works.** Its model list loads, messages get replies, and onboarding only says Ready when OpenCode can actually start.
+- **Failed sends are never silent.** A message that couldn't be sent shows the reason with Retry, and the text goes back into the composer.
+- **The window keeps responding** after the engine restarts or a provider errors. ⌘R reloads the window, and a small Reload prompt appears if something gets out of sync.
+- Commands that were running when the connection ended now show Interrupted.
+
 ## 0.1.3 — 2026-10-25
 
 Fixes for the second round of feedback, plus chats without a project.
