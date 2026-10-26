@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.3 — 2026-10-25
+
+Fixes for the second round of feedback, plus chats without a project.
+
+**New**
+- **Chats without a project.** Start a chat from the Chats group or ⌘K → New chat; no folder needed.
+- **Racing, end to end.** Write the prompt in the Race dialog, see each racer's status (including when one needs approval), compare the results, keep the best one in your checkout and discard the rest. Racers start from your uncommitted changes.
+- **Short generated titles** after the first reply, with Regenerate title in the thread menu.
+
+**Fixes**
+- Stop now stops the command the agent was running, and its card shows Stopped.
+- Token usage is the turn's real total for every agent, e.g. "45k in (22k cached) · 99 out · 2 calls".
+- One approval card for every agent: Approve once, Always allow (in plain words), Decline, and Cancel turn. File edits show as a diff.
+- Agent activity: no doubled words or duplicate items, opening a thread marks it read, and Mark all read / Clear.
+- Very large pastes attach as a file instead of freezing the window.
+- One name per model everywhere (Opus 5.5, not Opus 5-5).
+- Importing Codex history works for long sessions and opens what you imported.
+
 ## 0.1.2 — 2026-10-25
 
 Faster everywhere, plus fixes for everything reported in the first round of feedback. Thank you!
