@@ -12,11 +12,11 @@
 <p align="center">
   <a href="https://github.com/huslayer826/bubble-harness/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/huslayer826/bubble-harness?include_prereleases&label=download&color=1e6755" /></a>
   <img alt="macOS" src="https://img.shields.io/badge/platform-macOS-1e6755" />
-  <a href="https://github.com/huslayer826/bubble-harness/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=flat&color=1e6755" /></a>
+  <a href="https://github.com/huslayer826/bubble-harness"><img alt="GitHub stars" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=flat&color=1e6755" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/banner.png" alt="Bubble Harness website" width="860" />
+  <img src="assets/banner.png" alt="Bubble Harness" width="860" />
 </p>
 
 ## Download
@@ -29,24 +29,24 @@ brew install --cask huslayer826/tap/bubble-harness
 
 **Or download the [.dmg](https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg)** and drag Bubble Harness to Applications. The app isn't signed by Apple yet, so the first time you open it macOS will block it. Go to **System Settings → Privacy & Security** and click **Open Anyway**.
 
-Requires an Apple Silicon Mac and [Node.js](https://nodejs.org) (Homebrew installs Node for you). It's free and an early preview.
+**Requirements:** an Apple Silicon Mac on macOS 11 or later, [Node.js](https://nodejs.org) 22.12 or newer (Homebrew installs it for you), and at least one of the agents below. It's free and an early preview.
 
 **Update** with `brew upgrade --cask bubble-harness`, or download the latest .dmg again. **Uninstall** with `brew uninstall --cask --zap bubble-harness` (the `--zap` also removes chats and settings).
 
 ## Bring your own sub
 
-Bubble doesn't sell tokens. Sign in to the agents you already pay for and Bubble runs them for you.
+Bubble doesn't sell tokens. It runs the agents you already pay for, using their own command-line tools. **Install and sign in to at least one before you start:**
 
-| Agent | Sign in with |
-| --- | --- |
-| Claude Code | `claude auth login` |
-| Codex | `codex login` |
-| Cursor | `cursor-agent login` |
-| OpenCode | `opencode auth login` |
-| Grok | xAI account |
-| Antigravity | Google sign-in |
+| Agent | Install | Sign in with |
+| --- | --- | --- |
+| Claude Code | [Install guide](https://docs.claude.com/en/docs/claude-code/setup) | `claude auth login` |
+| Codex | [Install guide](https://github.com/openai/codex#installing-and-running-codex-cli) | `codex login` |
+| Cursor | [Install guide](https://cursor.com/cli) | `cursor-agent login` |
+| OpenCode (beta) | [Install guide](https://opencode.ai/docs) | `opencode auth login` |
+| Grok (beta) | [Install guide](https://github.com/xai-org/grok-build#installing-the-released-binary) | xAI account |
+| Antigravity (beta) | Installed from inside Bubble | Google sign-in |
 
-Your logins stay on your Mac. Bubble talks to each agent's own CLI and never asks for an API key.
+Bubble checks which agents are installed and signed in when you first open it. Your logins stay on your Mac, and Bubble never asks for an API key.
 
 ## Why it's fast
 
@@ -69,10 +69,24 @@ Rust · TypeScript · Tauri · SQLite · xterm.js
 No. The source is private. This repo holds releases, the website, the changelog and the issue tracker.
 
 **Does my code leave my machine?**
-Only the way it already does when you use these agents directly. Bubble runs locally and drives each agent's own CLI.
+Only the way it already does when you use these agents directly: your prompts and code go to the agent you choose, nowhere else. Bubble has no account, no analytics and no server of its own. The only other request it makes is a daily check of this repo's GitHub releases for a new version, which you can turn off in Settings.
 
-**Windows or Linux?**
-Not yet. macOS first.
+**Windows, Linux or Intel Macs?**
+Not yet. Apple Silicon Macs first.
+
+## Troubleshooting
+
+**"Bubble Harness Not Opened" / "Apple could not verify…"**
+The app isn't notarized by Apple yet. Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway**. Installing with Homebrew avoids this.
+
+**An agent shows "Not installed" but it is installed**
+Bubble looks for agents on the same PATH as your terminal. If it still can't find one, open **Settings → General → Provider instances** and set the agent's **Executable path**.
+
+**"Node.js 22.12 or newer is required"**
+Every agent except Codex runs through Node.js. Install it from [nodejs.org](https://nodejs.org) or with `brew install node`, then reopen Bubble.
+
+**Something else broke**
+Choose **Help → Report a bug…** in the app. It opens an issue with your versions filled in; **Help → Copy diagnostics** gives you details to paste into it.
 
 ## Team
 

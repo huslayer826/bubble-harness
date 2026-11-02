@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.5 — 2026-11-02
+
+Getting started is smoother, and errors say what's actually wrong.
+
+**New**
+- **Finds your tools.** Bubble now uses the same PATH as your terminal, so Node.js and agents installed with nvm, volta, fnm, asdf, mise, bun or npm are found when you open Bubble from the Dock or Finder.
+- **Node.js check.** Setup tells you when Node.js 22.12 or newer is missing, with an install button, instead of showing an agent as Ready that can't start.
+- **Help menu.** Report a bug… (opens an issue with your versions filled in), Copy diagnostics, and Show logs in Finder. Also in ⌘K.
+- **Update notice.** Bubble checks GitHub once a day and shows a small notice when a new version is out. Turn it off in Settings → General.
+- **Beta tags** on Grok, OpenCode and Antigravity.
+
+**Fixes**
+- Clear messages when an agent isn't installed, stops right away, or (Cursor) isn't signed in, with what to do next.
+- Stopping a Claude turn just shows Stopped.
+- Choosing a model your account doesn't have says so, with Choose another model.
+- If Codex's settings pick a model your account can't use, Bubble uses your account's default model instead of failing.
+- Plainer error messages throughout, with Copy details for the technical text.
+- Claude no longer asks before every file edit in the default mode; it still asks before running commands, like Codex.
+- Projects without Git explain that agent changes are tracked with Git, with Initialize Git.
+- Race branches are named `bubble/race-…`.
+- Server, remote and runtime settings are tucked behind Settings → Advanced → Show developer tools.
+- Requires macOS 11 or later.
+
 ## 0.1.4 — 2026-10-26
 
 **Fixes**

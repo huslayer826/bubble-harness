@@ -3,23 +3,33 @@ description: Something isn't working
 labels: [bug]
 body:
   - type: textarea
+    id: what
     attributes:
       label: What happened?
       description: What you did, what you expected, and what you got instead.
     validations:
       required: true
   - type: input
+    id: version
     attributes:
       label: Bubble version
       placeholder: e.g. 0.1.0
     validations:
       required: true
   - type: dropdown
+    id: agent
     attributes:
       label: Agent
       multiple: true
       options: [Claude Code, Codex, Cursor, OpenCode, Grok, Antigravity, Not agent-specific]
   - type: input
+    id: macos
     attributes:
       label: macOS version
       placeholder: e.g. macOS 26.3
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Optional. In Bubble Harness choose Help → Copy diagnostics and paste here. It includes versions and agent sign-in states, not your prompts or code.
+      render: text
