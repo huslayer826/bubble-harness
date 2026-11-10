@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/huslayer826/bubble-harness/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/huslayer826/bubble-harness?include_prereleases&label=download&color=1e6755" /></a>
-  <img alt="macOS" src="https://img.shields.io/badge/platform-macOS-1e6755" />
-  <a href="https://github.com/huslayer826/bubble-harness"><img alt="GitHub stars" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=flat&color=1e6755" /></a>
+  <a href="https://github.com/huslayer826/bubble-harness/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/huslayer826/bubble-harness?include_prereleases&label=download&color=8b9bff" /></a>
+  <img alt="macOS" src="https://img.shields.io/badge/platform-macOS-8b9bff" />
+  <a href="https://github.com/huslayer826/bubble-harness"><img alt="GitHub stars" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=flat&color=8b9bff" /></a>
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ Bubble is an early preview, and we're building it in the open. If you try it, pl
 We read every one and reply on the issue.
 
 <p align="center">
-  <a href="https://github.com/huslayer826/bubble-harness"><img alt="Star us on GitHub" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=for-the-badge&logo=github&label=Star%20us%20on%20GitHub&color=1e6755" /></a>
+  <a href="https://github.com/huslayer826/bubble-harness"><img alt="Star us on GitHub" src="https://img.shields.io/github/stars/huslayer826/bubble-harness?style=for-the-badge&logo=github&label=Star%20us%20on%20GitHub&color=8b9bff" /></a>
 </p>
 
 If Bubble saves you some time, a ⭐ helps other people find it.

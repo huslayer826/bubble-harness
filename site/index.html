@@ -3,204 +3,316 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bubble Harness</title>
-  <meta name="description" content="Every coding agent in one fast desktop app. Bring your own Claude Code, Codex, Cursor, OpenCode, Grok or Antigravity plan." />
-  <meta name="theme-color" content="#0a0c0b" />
-  <link rel="icon" href="icons/bubble.svg" type="image/svg+xml" />
+  <title>Bubble Harness · Every coding agent, one fast desktop app</title>
+  <meta name="description" content="Run Claude Code, Codex, Cursor, OpenCode, Grok and Antigravity from one fast, native desktop app. Bring the subscriptions you already have. Free for macOS." />
+  <meta name="theme-color" content="#0b0c0e" />
+  <meta property="og:title" content="Bubble Harness" />
+  <meta property="og:description" content="Every coding agent. One fast bubble. Free for macOS." />
+  <meta property="og:image" content="assets/og.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/brand/app-icon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="fizz" aria-hidden="true"></div>
+  <div class="backdrop" aria-hidden="true"></div>
 
-  <header class="nav">
-    <a class="brand" href="#top">
-      <img src="icons/bubble.svg" alt="" width="26" height="26" />
-      <span>Bubble Harness</span>
-    </a>
-    <nav class="nav-links">
-      <a href="#subs">Providers</a>
-      <a href="#fast">Why it's fast</a>
-      <a href="#feedback">Feedback</a>
-      <a class="nav-star" href="https://github.com/huslayer826/bubble-harness" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>
-        Star <span class="star-count" data-stars></span>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Bubble Harness home">
+        <img src="assets/brand/mark.svg" alt="" width="26" height="26" />
+        <span>Bubble Harness</span>
       </a>
-      <a class="nav-cta" href="#download">Download</a>
-    </nav>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#agents">Agents</a>
+        <a href="#start">Get started</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="gh" href="https://github.com/huslayer826/bubble-harness" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          <span class="star-count" data-stars>Star</span>
+        </a>
+        <a class="btn btn-sm btn-primary" href="#download">Download</a>
+      </div>
+    </div>
   </header>
 
   <main id="top">
-    <!-- Hero -->
+    <!-- ───────────── Hero ───────────── -->
     <section class="hero">
-      <div class="orbit" aria-label="Supported agents">
-        <button class="orb" style="--x:9%;--y:22%;--s:96px;--d:0s"   title="Claude Code"><img src="icons/claude.svg" alt="Claude Code" /></button>
-        <button class="orb" style="--x:31%;--y:6%; --s:70px;--d:-2s"  title="OpenCode"><img src="icons/opencode.svg" alt="OpenCode" /></button>
-        <button class="orb" style="--x:72%;--y:5%; --s:78px;--d:-4s"  title="Antigravity"><img src="icons/antigravity.svg" alt="Antigravity" /></button>
-        <button class="orb" style="--x:91%;--y:26%;--s:104px;--d:-1s" title="Codex"><img src="icons/openai.svg" alt="Codex" /></button>
-        <button class="orb" style="--x:20%;--y:72%;--s:84px;--d:-3s"  title="Grok"><img src="icons/grok.svg" alt="Grok" /></button>
-        <button class="orb" style="--x:82%;--y:74%;--s:90px;--d:-5s"  title="Cursor"><img src="icons/cursor.svg" alt="Cursor" /></button>
-      </div>
-
-      <div class="hero-copy">
-        <p class="pill"><span class="dot"></span>Early preview · macOS · Free</p>
-        <h1>Every coding agent.<br /><span class="soft">One fast bubble.</span></h1>
+      <div class="container hero-copy">
+        <a class="pill" href="https://github.com/huslayer826/bubble-harness/blob/main/CHANGELOG.md" target="_blank" rel="noopener">
+          <span class="pill-dot"></span>
+          <span data-version>v0.1.5</span> is out
+          <span class="pill-sep"></span>
+          <span class="pill-muted">See what's new</span>
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <h1>Every coding agent.<br /><span class="grad">One fast bubble.</span></h1>
         <p class="lede">
-          Run Claude Code, Codex, Cursor, OpenCode, Grok and Antigravity from one window.
-          Built in Rust, so it stays snappy with five agents going at once.
+          Run Claude Code, Codex, Cursor, OpenCode, Grok and Antigravity side by side in one native
+          desktop app. Use the subscriptions you already pay for. No API keys, no account.
         </p>
-        <div class="cta-row" id="download">
-          <a class="btn-primary" href="https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg">
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg" data-download>
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.37 12.7c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.08 5.94c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.02.08 2.07-.52 2.71-1.28z"/></svg>
             Download for macOS
           </a>
-          <a class="btn-ghost" href="#subs">See what it runs <span aria-hidden="true">→</span></a>
+          <button class="copy-cmd" type="button" data-copy="brew install --cask huslayer826/tap/bubble-harness" aria-label="Copy Homebrew install command">
+            <span class="prompt">$</span>
+            <code>brew install --cask huslayer826/tap/bubble-harness</code>
+            <span class="copy-label" data-copy-label>Copy</span>
+          </button>
         </div>
-        <div class="brew">
-          <code><span aria-hidden="true">$</span> brew install --cask huslayer826/tap/bubble-harness</code>
-          <button class="copy" data-copy="brew install --cask huslayer826/tap/bubble-harness" aria-label="Copy Homebrew command">Copy</button>
-        </div>
-        <p class="fine">Apple Silicon · First open from the .dmg: System Settings → Privacy &amp; Security → Open Anyway</p>
+        <p class="fine">Free · Apple Silicon · macOS 11+ · <span data-size>17 MB</span></p>
+      </div>
+
+      <div class="container">
+        <figure class="window hero-shot reveal">
+          <div class="window-glow" aria-hidden="true"></div>
+          <img src="assets/screens/hero.webp" alt="Bubble Harness showing a Claude Code thread next to the Changes panel with a live diff" width="2000" height="1306" fetchpriority="high" />
+        </figure>
       </div>
     </section>
 
-    <!-- Product peek -->
-    <section class="peek" aria-label="App preview">
-      <div class="window">
-        <div class="window-bar">
-          <span></span><span></span><span></span>
-          <p>bubble-harness — landing-page</p>
-        </div>
-        <div class="window-body">
-          <aside class="side">
-            <p class="side-label">Threads</p>
-            <div class="thread active"><img src="icons/claude.svg" alt="" />Hero copy pass<em>now</em></div>
-            <div class="thread"><img src="icons/openai.svg" alt="" />Fix nav on mobile<em>2m</em></div>
-            <div class="thread"><img src="icons/cursor.svg" alt="" />Bubble animation<em>9m</em></div>
-            <div class="thread"><img src="icons/grok.svg" alt="" />Write tests<em>1h</em></div>
-          </aside>
-          <div class="chat">
-            <div class="msg you">Make the hero feel lighter. Less copy, more air.</div>
-            <div class="msg agent">
-              <p>Trimmed the subheading to two lines and bumped the spacing. Here's the diff:</p>
-              <div class="diff">
-                <span class="file">index.html</span>
-                <code class="del">- The open, flexible, all-in-one platform for…</code>
-                <code class="add">+ Every coding agent. One fast bubble.</code>
-              </div>
+    <!-- ───────────── Agents strip ───────────── -->
+    <section class="agents" id="agents" aria-labelledby="agents-title">
+      <div class="container">
+        <p class="eyebrow center" id="agents-title">Bring your own sub. Bubble runs the agents you already use.</p>
+        <ul class="agent-row">
+          <li><span class="agent-ico"><img src="assets/agents/claude.svg" alt="" /></span>Claude Code</li>
+          <li><span class="agent-ico"><img src="assets/agents/openai.svg" alt="" /></span>Codex</li>
+          <li><span class="agent-ico"><img src="assets/agents/cursor.svg" alt="" /></span>Cursor</li>
+          <li><span class="agent-ico"><img src="assets/agents/opencode.svg" alt="" /></span>OpenCode <em>beta</em></li>
+          <li><span class="agent-ico"><img src="assets/agents/grok.svg" alt="" /></span>Grok <em>beta</em></li>
+          <li><span class="agent-ico"><img src="assets/agents/antigravity.svg" alt="" /></span>Antigravity <em>beta</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────── Feature rows ───────────── -->
+    <section class="features" id="features">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Features</p>
+          <h2>A calm place for loud agents.</h2>
+          <p class="sub">Everything you need to direct, review and ship agent work, without juggling five terminals and three IDEs.</p>
+        </header>
+
+        <article class="feature reveal">
+          <div class="feature-copy">
+            <span class="tag">Threads</span>
+            <h3>All your agents, one sidebar.</h3>
+            <p>Every thread lives in one place, grouped by project. Pick the agent and model per thread. Claude on the UI, Codex on the review, Cursor on the docs, and switch between them in a keystroke.</p>
+            <ul class="ticks">
+              <li>Streaming replies with tools, plans and reasoning laid out clearly</li>
+              <li>Queue and steer messages while an agent works</li>
+              <li>Import existing Codex and Claude history</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/screens/threads.webp" alt="A Codex thread reviewing timer logic, with other agent threads in the sidebar" loading="lazy" width="2000" height="1306" /></figure>
+        </article>
+
+        <article class="feature flip reveal">
+          <div class="feature-copy">
+            <span class="tag">Review</span>
+            <h3>See every change before it lands.</h3>
+            <p>The Changes panel shows a live diff of what the agent touched, turn by turn. Bubble saves a hidden Git checkpoint around every turn, so you can rewind files and conversation together with <b>Edit from here</b>.</p>
+            <ul class="ticks">
+              <li>Per-turn and full-branch diffs</li>
+              <li>Checkpoints that never touch your branch history</li>
+              <li>Commit, push and open a PR with generated messages</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/screens/changes.webp" alt="The Changes panel showing a live diff of index.html and main.ts" loading="lazy" width="1040" height="1082" /></figure>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-copy">
+            <span class="tag">Race</span>
+            <h3>Race your models.</h3>
+            <p>Not sure which agent will nail it? Send one prompt to several. Each racer gets its own Git worktree, so nothing collides. Compare the results, keep the best one in your checkout and discard the rest.</p>
+            <ul class="ticks">
+              <li>Racers start from your uncommitted changes</li>
+              <li>Live status for each racer, including approvals</li>
+              <li>Branches named <code>bubble/race-…</code></li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/screens/race.webp" alt="The Race models dialog sending one prompt to Claude Code and Cursor, each in its own Git worktree" loading="lazy" width="1240" height="1180" /></figure>
+        </article>
+
+        <article class="feature flip reveal">
+          <div class="feature-copy">
+            <span class="tag">Built in</span>
+            <h3>Terminal, files and browser. Right there.</h3>
+            <p>A real terminal, a file browser and a built-in browser sit next to the conversation. Pick an element or a region in the page and drop it straight into your prompt as context.</p>
+            <ul class="ticks">
+              <li>Multiple PTY terminals with history that survives restarts</li>
+              <li>Workspace file tree and content search</li>
+              <li>Browser element picking and annotations</li>
+            </ul>
+          </div>
+          <figure class="window"><img src="assets/screens/terminal.webp" alt="The built-in terminal running next to a thread" loading="lazy" width="2000" height="1306" /></figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── Bento ───────────── -->
+    <section class="bento-wrap">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Why it's fast</p>
+          <h2>Native where it counts.</h2>
+          <p class="sub">A Rust core does the heavy lifting in its own process. The interface never waits on it.</p>
+        </header>
+        <div class="bento">
+          <div class="cell cell-wide reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+            <h4>Rust core</h4>
+            <p>Storage, provider processes, Git and terminals run natively on SQLite and an event journal. Five agents at once and the window stays smooth.</p>
+            <div class="stats">
+              <div><strong data-size>17 MB</strong><span>download</span></div>
+              <div><strong>6</strong><span>agents</span></div>
+              <div><strong>0</strong><span>API keys</span></div>
             </div>
-            <div class="composer">
-              <span>Ask anything…</span>
-              <span class="chip"><img src="icons/claude.svg" alt="" />Claude Code</span>
-            </div>
+          </div>
+          <div class="cell reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg></div>
+            <h4>Close it, it keeps going</h4>
+            <p>Running turns, approvals and queued prompts survive closing the window. Reopen and you're caught up.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h4>Approvals you can read</h4>
+            <p>One card for every agent: Approve once, Always allow, Decline. File edits show as a diff, commands in plain words.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+            <h4>Private by design</h4>
+            <p>No account, no analytics, no server of its own. Your code only goes to the agent you choose.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"/></svg></div>
+            <h4>Keyboard first</h4>
+            <p>⌘K for everything: threads, projects, commands and settings. Every shortcut is configurable.</p>
+          </div>
+          <div class="cell cell-full reveal">
+            <div class="cell-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+            <h4>Git-native</h4>
+            <p>Worktrees, branches, commits and pull requests for GitHub, GitLab and more, without leaving the thread.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bring your own sub -->
-    <section class="subs" id="subs">
-      <div class="section-head">
-        <h2>Bring your own sub.</h2>
-        <p>We don't sell tokens. Sign in with the plans you already pay for and we'll handle the rest.</p>
-      </div>
-
-      <div class="sub-grid">
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/claude.svg" alt="" /></span>
-          <div><h3>Claude Code</h3><code>claude auth login</code></div>
-          <button class="copy" data-copy="claude auth login" aria-label="Copy command">Copy</button>
-        </article>
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/openai.svg" alt="" /></span>
-          <div><h3>Codex</h3><code>codex login</code></div>
-          <button class="copy" data-copy="codex login" aria-label="Copy command">Copy</button>
-        </article>
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/cursor.svg" alt="" /></span>
-          <div><h3>Cursor</h3><code>cursor-agent login</code></div>
-          <button class="copy" data-copy="cursor-agent login" aria-label="Copy command">Copy</button>
-        </article>
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/opencode.svg" alt="" /></span>
-          <div><h3>OpenCode</h3><code>opencode auth login</code></div>
-          <button class="copy" data-copy="opencode auth login" aria-label="Copy command">Copy</button>
-        </article>
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/grok.svg" alt="" /></span>
-          <div><h3>Grok</h3><code>xAI account</code></div>
-        </article>
-        <article class="sub">
-          <span class="sub-icon"><img src="icons/antigravity.svg" alt="" /></span>
-          <div><h3>Antigravity</h3><code>Google sign-in</code></div>
-        </article>
-      </div>
-
-      <ul class="notes">
-        <li>Your logins stay on your Mac.</li>
-        <li>No markup, no extra caps.</li>
-        <li>More agents on the way.</li>
-      </ul>
-    </section>
-
-    <!-- Fast -->
-    <section class="fast" id="fast">
-      <div class="section-head">
-        <h2>Fast where it counts.</h2>
-        <p>The next harness shouldn't feel like a browser tab. This one doesn't.</p>
-      </div>
-
-      <div class="tiles">
-        <article class="tile">
-          <span class="tile-bubble"></span>
-          <h3>Rust under the hood</h3>
-          <p>Storage, processes and the terminal run native. The UI never waits on them.</p>
-        </article>
-        <article class="tile">
-          <span class="tile-bubble"></span>
-          <h3>Close it. It keeps going.</h3>
-          <p>Turns, approvals and queued prompts survive the window closing. Reopen and you're caught up.</p>
-        </article>
-        <article class="tile">
-          <span class="tile-bubble"></span>
-          <h3>Race your models</h3>
-          <p>Send one prompt to a few agents. Each gets its own worktree, so nothing collides.</p>
-        </article>
-        <article class="tile">
-          <span class="tile-bubble"></span>
-          <h3>Diffs and terminal built in</h3>
-          <p>Review changes, rewind a turn, run a command. No tab-hopping.</p>
-        </article>
+    <!-- ───────────── Get started ───────────── -->
+    <section class="start" id="start">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Get started</p>
+          <h2>Up and running in a minute.</h2>
+        </header>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-n">1</span>
+            <h4>Install Bubble</h4>
+            <p>Use Homebrew, or download the .dmg and drag it to Applications.</p>
+            <button class="copy-cmd small" type="button" data-copy="brew install --cask huslayer826/tap/bubble-harness"><span class="prompt">$</span><code>brew install --cask huslayer826/tap/bubble-harness</code><span class="copy-label" data-copy-label>Copy</span></button>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">2</span>
+            <h4>Sign in to an agent</h4>
+            <p>Bubble uses each CLI's own login. Sign in to at least one:</p>
+            <div class="chips">
+              <code>claude auth login</code><code>codex login</code><code>cursor-agent login</code><code>opencode auth login</code>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">3</span>
+            <h4>Open a folder</h4>
+            <p>Pick a project, choose an agent and start a thread. Bubble checks which agents are ready the first time you open it.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Try it + feedback -->
-    <section class="closer" id="feedback">
-      <h2>Give it a try.<br /><span class="soft">Tell us what you think.</span></h2>
-      <p class="closer-lede">Bubble is an early preview, and we're building it in the open. If you try it, we'd love to hear how it went. A couple of sentences really helps.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg">Get Bubble Harness</a>
-        <a class="star-btn" href="https://github.com/huslayer826/bubble-harness" target="_blank" rel="noopener" title="Opens the repo on GitHub. Click Star in the top right.">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.42c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-          <span>Star us on GitHub</span>
-          <span class="star-btn-count" data-stars-wrap hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><b data-stars></b></span>
-        </a>
+    <!-- ───────────── FAQ ───────────── -->
+    <section class="faq" id="faq">
+      <div class="container narrow">
+        <header class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions, answered.</h2>
+        </header>
+        <details>
+          <summary>Is it free?</summary>
+          <p>Yes. Bubble Harness is free to download and use. It's an early preview, so expect rough edges, and please tell us about them.</p>
+        </details>
+        <details>
+          <summary>Do I need API keys?</summary>
+          <p>No. Bubble doesn't sell tokens. It runs the agents you already pay for through their own command-line tools and uses their existing logins. Your logins stay on your Mac.</p>
+        </details>
+        <details>
+          <summary>Does my code leave my machine?</summary>
+          <p>Only the way it already does when you use these agents directly: your prompts and code go to the agent you choose, nowhere else. Bubble has no account, no analytics and no server of its own. The only other request it makes is a daily check of GitHub releases for a new version, which you can turn off in Settings.</p>
+        </details>
+        <details>
+          <summary>What do I need to run it?</summary>
+          <p>An Apple Silicon Mac on macOS 11 or later, <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> 22.12 or newer (Homebrew installs it for you), and at least one supported agent installed and signed in.</p>
+        </details>
+        <details>
+          <summary>macOS says the app can't be opened.</summary>
+          <p>Bubble isn't notarized by Apple yet. Open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>. Installing with Homebrew avoids this.</p>
+        </details>
+        <details>
+          <summary>Windows, Linux or Intel Macs?</summary>
+          <p>Not yet. Apple Silicon Macs come first. Star the repo to hear when other platforms land.</p>
+        </details>
+        <details>
+          <summary>Is it open source?</summary>
+          <p>No. The source is private. The public repo holds releases, the changelog and the issue tracker.</p>
+        </details>
       </div>
-      <ul class="feedback-links">
-        <li><a href="https://github.com/huslayer826/bubble-harness/issues/new?template=1-feedback.yml" target="_blank" rel="noopener"><strong>Share feedback</strong><span>What worked, what didn't</span></a></li>
-        <li><a href="https://github.com/huslayer826/bubble-harness/issues/new?template=2-bug.yml" target="_blank" rel="noopener"><strong>Report a bug</strong><span>Something broke</span></a></li>
-        <li><a href="https://github.com/huslayer826/bubble-harness/issues/new?template=3-feature.yml" target="_blank" rel="noopener"><strong>Request a feature</strong><span>Something's missing</span></a></li>
-      </ul>
+    </section>
+
+    <!-- ───────────── Final CTA ───────────── -->
+    <section class="final" id="download">
+      <div class="container">
+        <div class="final-card reveal">
+          <img class="final-icon" src="assets/brand/app-icon.svg" alt="" width="96" height="96" />
+          <h2>Give Bubble a try.</h2>
+          <p>Free for macOS. Bring your own agents. Tell us what you think.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="https://github.com/huslayer826/bubble-harness/releases/latest/download/Bubble-Harness-arm64.dmg" data-download>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.37 12.7c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.08 5.94c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.02.08 2.07-.52 2.71-1.28z"/></svg>
+              Download for macOS
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/huslayer826/bubble-harness/issues/new?template=1-feedback.yml" target="_blank" rel="noopener">Share feedback</a>
+          </div>
+          <p class="fine"><span data-version>v0.1.5</span> · Apple Silicon · macOS 11+ · <a href="https://github.com/huslayer826/bubble-harness/releases" target="_blank" rel="noopener">All releases</a></p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <a class="brand" href="#top"><img src="icons/bubble.svg" alt="" width="20" height="20" /><span>Bubble Harness</span></a>
-    <p>© 2026 Bubble Harness. Logos belong to their owners.</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><img src="assets/brand/mark.svg" alt="" width="22" height="22" /><span>Bubble Harness</span></a>
+      <nav aria-label="Footer">
+        <a href="https://github.com/huslayer826/bubble-harness" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/huslayer826/bubble-harness/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+        <a href="https://github.com/huslayer826/bubble-harness/issues/new?template=2-bug.yml" target="_blank" rel="noopener">Report a bug</a>
+        <a href="https://github.com/huslayer826/bubble-harness/issues/new?template=3-feature.yml" target="_blank" rel="noopener">Request a feature</a>
+      </nav>
+      <p class="legal">© 2026 Bubble Harness. Product names and logos belong to their owners.</p>
+    </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -1,68 +1,72 @@
-// Background fizz: a few slow bubbles drifting up.
-const fizz = document.querySelector(".fizz");
-const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (fizz && !calm) {
-  for (let i = 0; i < 18; i++) {
-    const b = document.createElement("i");
-    const size = 6 + Math.random() * 38;
-    b.style.width = b.style.height = `${size}px`;
-    b.style.left = `${Math.random() * 100}%`;
-    b.style.animationDuration = `${18 + Math.random() * 22}s`;
-    b.style.animationDelay = `${-Math.random() * 40}s`;
-    fizz.appendChild(b);
+// Bubble Harness website. Small progressive enhancements; the page works without JS.
+(() => {
+  const REPO = "huslayer826/bubble-harness";
+
+  // Sticky nav gets a background once the page scrolls.
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Copy-to-clipboard command buttons.
+  for (const button of document.querySelectorAll("[data-copy]")) {
+    button.addEventListener("click", async () => {
+      const label = button.querySelector("[data-copy-label]");
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy);
+        button.classList.add("copied");
+        if (label) label.textContent = "Copied";
+      } catch {
+        if (label) label.textContent = "Press ⌘C";
+        const range = document.createRange();
+        range.selectNodeContents(button.querySelector("code"));
+        getSelection().removeAllRanges();
+        getSelection().addRange(range);
+      }
+      setTimeout(() => {
+        button.classList.remove("copied");
+        if (label) label.textContent = "Copy";
+      }, 1800);
+    });
   }
-}
 
-// Click a provider bubble to pop it. It grows back.
-document.querySelectorAll(".orb").forEach((orb) => {
-  orb.addEventListener("click", () => {
-    if (orb.classList.contains("pop") || calm) return;
-    const r = orb.getBoundingClientRect();
-    const host = orb.parentElement.getBoundingClientRect();
-    for (let i = 0; i < 10; i++) {
-      const s = document.createElement("span");
-      const a = (i / 10) * Math.PI * 2;
-      const d = r.width * 0.7;
-      s.className = "burst";
-      s.style.left = `${r.left - host.left + r.width / 2 - 3}px`;
-      s.style.top = `${r.top - host.top + r.height / 2 - 3}px`;
-      s.style.setProperty("--bx", `${Math.cos(a) * d}px`);
-      s.style.setProperty("--by", `${Math.sin(a) * d}px`);
-      orb.parentElement.appendChild(s);
-      setTimeout(() => s.remove(), 500);
-    }
-    orb.classList.add("pop");
-    setTimeout(() => {
-      orb.classList.remove("pop");
-      orb.classList.add("regrow");
-      setTimeout(() => orb.classList.remove("regrow"), 700);
-    }, 1400);
-  });
-});
+  // Reveal sections as they scroll into view.
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries)
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else reveals.forEach((el) => el.classList.add("in"));
 
-// Copy login commands.
-document.querySelectorAll(".copy").forEach((btn) => {
-  btn.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(btn.dataset.copy);
-      btn.textContent = "Copied";
-      btn.classList.add("done");
-      setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1400);
-    } catch {}
-  });
-});
-
-// Live GitHub star count. Fails quietly if the API is unreachable or rate-limited.
-const starEls = document.querySelectorAll("[data-stars]");
-if (starEls.length) {
-  fetch("https://api.github.com/repos/huslayer826/bubble-harness")
-    .then((r) => (r.ok ? r.json() : null))
-    .then((repo) => {
-      const n = repo?.stargazers_count;
-      if (typeof n !== "number" || n <= 0) return;
-      const label = n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : String(n);
-      starEls.forEach((el) => (el.textContent = label));
-      document.querySelectorAll("[data-stars-wrap]").forEach((el) => (el.hidden = false));
+  // Live release info and star count from GitHub (falls back to the static HTML).
+  const fmtCount = (n) => (n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k" : String(n));
+  fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((release) => {
+      if (release.tag_name)
+        document.querySelectorAll("[data-version]").forEach((el) => (el.textContent = release.tag_name));
+      const dmg = (release.assets || []).find((a) => a.name.endsWith(".dmg"));
+      if (dmg) {
+        const mb = Math.round(dmg.size / 1e6) + " MB";
+        document.querySelectorAll("[data-size]").forEach((el) => (el.textContent = mb));
+        document.querySelectorAll("[data-download]").forEach((el) => (el.href = dmg.browser_download_url));
+      }
     })
     .catch(() => {});
-}
+  fetch(`https://api.github.com/repos/${REPO}`)
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((repo) => {
+      const el = document.querySelector("[data-stars]");
+      // Only show the count once it's big enough to help rather than hurt.
+      if (el && typeof repo.stargazers_count === "number" && repo.stargazers_count >= 50) el.textContent = fmtCount(repo.stargazers_count);
+    })
+    .catch(() => {});
+})();
